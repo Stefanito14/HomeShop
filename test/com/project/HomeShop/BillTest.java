@@ -55,4 +55,12 @@ class BillTest {
         assertEquals(870.98,bill.getTotal(),0.01);
     }
 
+    @Test
+    public void Given_EmptyProductList_getError(){
+        Bill bill = new Bill(customer, lowCostRelayDelivery);
+        assertThrows(NoProductInBillException.class,() -> bill.generate(writterMock));
+    }
+
+
+
 }

@@ -14,9 +14,9 @@ public class Main {
 
         Bill bill = new Bill(customer, new RelayDelivery(27));
 
-        bill.addProduct(cafe, 1);
+        /*bill.addProduct(cafe, 1);
         bill.addProduct(tv, 1);
-        bill.addProduct(fridge, 1);
+        bill.addProduct(fridge, 1);*/
 
         try {
             bill.generate(new Writter() {
@@ -37,6 +37,8 @@ public class Main {
             });
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (NoProductInBillException e){
+            System.err.println("Il n'y a aucun produit");
         }
     }
 

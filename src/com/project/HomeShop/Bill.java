@@ -1,6 +1,7 @@
 package com.project.HomeShop;
 
 import java.io.IOException;
+import java.io.NotActiveException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,6 +33,8 @@ public class Bill {
     }
 
     public void generate(Writter writter) throws IOException {
+        if (products.isEmpty())
+            throw new NoProductInBillException();
         writter.start();
         writter.writeLine("HomeShop compagnie");
         writter.writeLine("1 Place Charles de Gaulle, 75008 Paris");
