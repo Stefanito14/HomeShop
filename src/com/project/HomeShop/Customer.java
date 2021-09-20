@@ -14,7 +14,7 @@ public class Customer {
         return fullname;
     }
 
-    public String getAdress() {
+    public String getAddress() {
         return adress;
     }
 }
