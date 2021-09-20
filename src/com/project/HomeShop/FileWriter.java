@@ -27,7 +27,7 @@ public class FileWriter implements Writter {
     }
 
     @Override
-    public void stop() throws IOException {
+    public void stop(){
         try{
             Files.write(path,String.format(content).getBytes());
         }catch (IOException e){
