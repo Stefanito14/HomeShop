@@ -31,7 +31,7 @@ public class FileWriter implements Writter {
         try{
             Files.write(path,String.format(content).getBytes());
         }catch (IOException e){
-            System.out.println("Impossible de rédiger la facture");
+            System.err.println("Impossible de rédiger la facture");
         }
     }
 }
